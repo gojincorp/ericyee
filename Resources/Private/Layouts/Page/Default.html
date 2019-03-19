@@ -1,0 +1,72 @@
+<nav class="navbar navbar-default ibDefaultCss" id="topNavbar" data-spy="affix" data-offset="0px">
+  <div class="container" style="position: relative; z-index: 9999999;">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" id="navbarToggle" data-toggle="collapse" data-target="#eyee-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="{mainnavigation.0.link}"><img alt="Brand" src="fileadmin/logo.svg"></a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="eyee-navbar">
+      <ul class="nav navbar-nav">
+      	<f:for each="{mainnavigation}" as="mainnavigationItem">
+      		<f:if condition="{mainnavigationItem.children}">
+      			<f:then>
+			        <li class="dropdown{f:if(condition: mainnavigationItem.active, then:' active')}">
+						<a href="#" class="dropdown-toggle" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{mainnavigationItem.title} <span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<f:for each="{mainnavigationItem.children}" as="child">
+							    <li class="{f:if(condition: child.active, then:'active')}">
+							        <a href="{child.link}" target="{child.target}" title="{child.title}">
+							            {child.title}
+							        </a>
+							    </li>
+							</f:for>
+						</ul>
+			        </li>
+      			</f:then>
+      			<f:else>
+		      		<li class="{f:if(condition: mainnavigationItem.active, then:'active')}">
+			            <a href="{mainnavigationItem.link}" target="{mainnavigationItem.target}" title="{mainnavigationItem.title}">
+			                {mainnavigationItem.title}<f:if condition="{mainnavigationItem.active}"><span class="sr-only">(current)</span></f:if>
+			            </a>
+		      		</li>
+      			</f:else>
+      		</f:if>
+      	</f:for>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<div class="container" id="breadcrumbContainer">
+<f:for each="{mainnavigation}" as="mainnavigationItem">
+	<f:if condition="{mainnavigationItem.active} && {mainnavigationItem.children}">
+		<ol class="breadcrumb">
+			<!-- 
+			<li class="active"><a href="{mainnavigation.0.link}">Eric Yee</a></li>
+			 -->
+			<li class="active"><a href="{mainnavigation.0.link}">{mainnavigationItem.title}</a></li>
+			<f:for each="{mainnavigationItem.children}" as="child">
+				<f:if condition="{child.active}">
+					<li class="active">
+						<a href="{child.link}" target="{child.target}" title="{child.title}">
+							{child.title}
+							<span class="sr-only">(current)</span>
+						</a>
+					</li>
+				</f:if>
+			</f:for>
+		</ol>
+	</f:if>
+</f:for>
+</div>
+<f:render section="Main" />
+<div class="device-xs visible-xs" id="show-xs"></div>
+<div class="device-sm visible-sm" id="show-sm"></div>
+<div class="device-md visible-md" id="show-md"></div>
+<div class="device-lg visible-lg" id="show-lg"></div>

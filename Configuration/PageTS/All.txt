@@ -1,0 +1,7 @@
+#
+# PageTS for Eric Yee
+#
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:eric_yee/Configuration/PageTS/RTE.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:eric_yee/Configuration/PageTS/TCEFORM.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:eric_yee/Configuration/PageTS/TCEMAIN.txt">
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:eric_yee/Configuration/PageTS/Mod/WebLayout/BackendLayouts.txt">

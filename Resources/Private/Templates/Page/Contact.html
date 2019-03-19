@@ -1,0 +1,35 @@
+<f:layout name="Default" />
+<f:section name="Main">
+	<div class="container">
+		<div id="contact_form_holder">
+		    <form action="http://ericyee.ideasbeyond.com/?id=79" method="post" id="contact_form">
+		        <h2>Contact Me</h2>
+		        <div id="topic_error" class="error"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> What category should this be filed under?</div>
+		        <div>
+		            <select name="topic" id="topic">
+		                <option value="">Please select a topic...</option>
+		                <option value=" Option 1 ">Job Opening</option>
+		                <option value=" Option 2 ">Contract Work</option>
+		                <option value=" Option 3 ">General</option>
+		            </select>
+		        </div>
+		        NAME:<div id="name_error" class="error"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Who you are?</div>
+		        <div><input class="contact_name" type="text" name="name" id="name" /></div>
+		        EMAIL:<div id="email_error" class="error"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> How do I contact you?</div>
+		        <div><input class="contact_email" type="text" name="email" id="email" /></div>
+		        SUBJECT:<div id="subject_error" class="error"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Why are you contacting me?</div>
+		        <div><input class="contact_subject" type="text" name="subject" id="subject" /></div>
+		        MESSAGE:<div id="message_error" class="error"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Don't you have something more to say?</div>
+		        <div><textarea class="contact_message" name="message" id="message"></textarea></div>
+		        <div id="recaptcha_error" class="error"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Problem with ReCaptcha.  Please try again.</div>
+		        <div class="g-recaptcha" data-sitekey="6LcXxmwUAAAAADgF5QjfpwVq7YNQ7lqa2806QnlL"></div>
+		        <div id="mail_success" class="success"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Thank you.  Your message has been sent.</div>
+		        <div id="mail_fail" class="error"><span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> Sorry, we don't know what happened. Please try again later.</div>
+		        <div id="cf_submit_p">
+		            <input class="submit" type="submit" id="send_message" value="Send Message">
+		        </div>
+		        
+		    </form>
+		</div>
+	</div>
+</f:section>

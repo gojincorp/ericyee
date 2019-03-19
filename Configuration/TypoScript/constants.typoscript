@@ -1,0 +1,157 @@
+######################
+#### DEPENDENCIES ####
+######################
+<INCLUDE_TYPOSCRIPT: source="FILE:EXT:fluid_styled_content/Configuration/TypoScript/constants.txt">
+
+
+##############################
+#### FLUID STYLED CONTENT ####
+##############################
+styles {
+    templates {
+        layoutRootPath = EXT:eric_yee/Resources/Private/Layouts/ContentElements/
+        partialRootPath = EXT:eric_yee/Resources/Private/Partials/ContentElements/
+        templateRootPath = EXT:eric_yee/Resources/Private/Templates/ContentElements/
+    }
+}
+
+
+############
+### PAGE ###
+############
+page >
+page {
+     fluidtemplate {
+        layoutRootPath = EXT:eric_yee/Resources/Private/Layouts/Page/
+        partialRootPath = EXT:eric_yee/Resources/Private/Partials/Page/
+        templateRootPath = EXT:eric_yee/Resources/Private/Templates/Page/
+    }
+    meta {
+        description =
+        author =
+        keywords =
+        viewport = width=device-width, initial-scale=1
+        robots = index,follow
+        apple-mobile-web-app-capable = no
+        compatible = IE=edge
+    }
+    tracking {
+        google {
+            trackingID =
+            anonymizeIp = 1
+        }
+    }
+}
+
+
+##############
+### CONFIG ###
+##############
+config >
+config {
+    no_cache = 0
+    removeDefaultJS = 0
+    admPanel = 1
+    prefixLocalAnchors = all
+    headerComment = build by sitepackagebuilder.com
+    sendCacheHeaders = 1
+}
+
+
+#########################
+### ERIC YEE PACKAGE ###
+#########################
+plugin.eric_yee {
+    settings {
+        # cat=eric yee: advanced/190/100; type=boolean; label=Override LESS Variables: If enabled the variables defined in your LESS files will be overridden with the ones defined as TypoScript Constants.
+        overrideLessVariables = 1
+        # cat=eric yee: advanced/190/110; type=boolean; label=CSS source mapping: Create a CSS source map useful to debug Less in browser developer tools. Note: CSS compression will be disabled.
+        cssSourceMapping = 0
+    }
+}
+
+####################################
+### ERIC YEE PACKAGE EXTENSIONS ###
+####################################
+plugin.eric_yee {
+    view {
+        # cat=eric yee: advanced/EricYeeExtensions/layoutRootPath; type=string; label=Layout Root Path: Path to layouts
+        layoutRootPath = EXT:eric_yee/Resources/Private/Layouts/
+        # cat=eric yee: advanced/EricYeeExtensions/partialRootPath; type=string; label=Partial Root Path: Path to partials
+        partialRootPath = EXT:eric_yee/Resources/Private/Partials/
+        # cat=eric yee: advanced/EricYeeExtensions/templateRootPath; type=string; label=Template Root Path: Path to templates
+        templateRootPath = EXT:eric_yee/Resources/Private/Templates/
+    }
+}
+
+##########################################
+### ERIC YEE PACKAGE CONTENT ELEMENTS ###
+##########################################
+plugin.eric_yee_contentelements {
+    header {
+        # cat=eric yee: advanced/138/defaultHeaderType; type=int[1-5]; label=Default Header type: Enter the number of the header layout to be used by default
+        defaultHeaderType = 2
+        # cat=eric yee: advanced/138/class; type=string; label=Default Header class
+        class = element-header
+    }
+    subheader {
+        # cat=eric yee: advanced/139/class; type=string; label=Default Subheader class
+        class = element-subheader
+    }
+    view {
+        # cat=eric yee: advanced/140/layoutRootPath; type=string; label=Layout Root Path: Path to layouts
+        layoutRootPath = EXT:eric_yee/Resources/Private/Layouts/ContentElements/
+        # cat=eric yee: advanced/140/partialRootPath; type=string; label=Partial Root Path: Path to partials
+        partialRootPath = EXT:eric_yee/Resources/Private/Partials/ContentElements/
+        # cat=eric yee: advanced/140/templateRootPath; type=string; label=Template Root Path: Path to templates
+        templateRootPath = EXT:eric_yee/Resources/Private/Templates/ContentElements/
+    }
+    preload {
+        # cat=eric yee: advanced/137/100; type=boolean; label=Preload Images
+        images = 0
+    }
+    lightbox {
+        # cat=eric yee: advanced/144/100; type=string; label=Lightbox Css Class
+        cssClass = lightbox
+        # cat=eric yee: advanced/144/101; type=string; label=Lightbox Group Prefix
+        prefix = lightbox-group
+    }
+    gallery {
+        columnClass {
+            # cat=eric yee: advanced/146/100; type=string; label=Gallery Item CSS Class for 1 column
+            1 = col-xs-12
+            # cat=eric yee: advanced/146/101; type=string; label=Gallery Item CSS Class for 2 columns
+            2 = col-sm-6 col-xs-12
+            # cat=eric yee: advanced/146/102; type=string; label=Gallery Item CSS Class for 3 columns
+            3 = col-xs-4
+            # cat=eric yee: advanced/146/103; type=string; label=Gallery Item CSS Class for 4 Columns
+            4 = col-sm-3 col-xs-6
+            # cat=eric yee: advanced/146/104; type=string; label=Gallery Item CSS Class for 6 Columns
+            6 = col-md-2 col-sm-3 col-xs-4
+        }
+    }
+    menu_thumbnail {
+        media {
+            # cat=eric yee: advanced/143/102; type=string; label=Thumbnail Menu Media Height
+            height = 250c
+            # cat=eric yee: advanced/143/103; type=string; label=Thumbnail Menu Media Width
+            width = 440c
+        }
+        title {
+            # cat=eric yee: advanced/143/104; type=string; label=Thumbnail Menu Crop Title
+            crop = 100
+        }
+        abstract {
+            # cat=eric yee: advanced/143/105; type=string; label=Thumbnail Menu Crop Abstract
+            crop = 250
+        }
+    }
+    uploads {
+        preview {
+            # cat=eric yee: advanced/145/100; type=string; label=Uploads Preview Height
+            height = 100c
+            # cat=eric yee: advanced/145/101; type=string; label=Uploads Preview Width
+            width = 100c
+        }
+    }
+}

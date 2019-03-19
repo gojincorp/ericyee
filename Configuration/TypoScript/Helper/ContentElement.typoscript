@@ -1,0 +1,83 @@
+##################################################
+### CONTENT ELEMENT SETTINGS                   ###
+### Shared settings for TYPO3 content elements ###
+##################################################
+lib.contentElement = FLUIDTEMPLATE
+lib.contentElement {
+
+    ################
+    ### TEMPLATE ###
+    ################
+    templateName = Default
+    templateRootPaths {
+        #0 = EXT:eric_yee/Resources/Private/Templates/ContentElements/
+        10 = {$plugin.eric_yee_contentelements.view.templateRootPath}
+    }
+    partialRootPaths {
+        #0 = EXT:eric_yee/Resources/Private/Partials/ContentElements/
+        10 = {$plugin.eric_yee_contentelements.view.partialRootPath}
+    }
+    layoutRootPaths {
+        #0 = EXT:eric_yee/Resources/Private/Layouts/ContentElements/
+        10 = {$plugin.eric_yee_contentelements.view.layoutRootPath}
+    }
+
+    ##########################
+    ### DATA PREPROCESSING ###
+    ##########################
+    dataProcessing {
+        1509614342 = TYPO3\CMS\Frontend\DataProcessing\FilesProcessor
+        1509614342 {
+            references.fieldName = background_image
+            as = backgroundImage
+        }
+    }
+
+    ################
+    ### SETTINGS ###
+    ################
+    settings {
+        header {
+            defaultHeaderType = {$plugin.eric_yee_contentelements.header.defaultHeaderType}
+            class = {$plugin.eric_yee_contentelements.header.class}
+        }
+        subheader {
+            class = {$plugin.eric_yee_contentelements.subheader.class}
+        }
+        preload {
+            images = {$plugin.eric_yee_contentelements.preload.images}
+        }
+        lightbox {
+            cssClass = {$plugin.eric_yee_contentelements.lightbox.cssClass}
+            prefix = {$plugin.eric_yee_contentelements.lightbox.prefix}
+        }
+        gallery {
+            columnClass {
+                1 = {$plugin.eric_yee_contentelements.gallery.columnClass.1}
+                2 = {$plugin.eric_yee_contentelements.gallery.columnClass.2}
+                3 = {$plugin.eric_yee_contentelements.gallery.columnClass.3}
+                4 = {$plugin.eric_yee_contentelements.gallery.columnClass.4}
+                6 = {$plugin.eric_yee_contentelements.gallery.columnClass.6}
+            }
+        }
+        menuthumbnail {
+            media {
+                height = {$plugin.eric_yee_contentelements.menu_thumbnail.media.height}
+                width = {$plugin.eric_yee_contentelements.menu_thumbnail.media.width}
+            }
+            title {
+                crop = {$plugin.eric_yee_contentelements.menu_thumbnail.title.crop}
+            }
+            abstract {
+                crop = {$plugin.eric_yee_contentelements.menu_thumbnail.abstract.crop}
+            }
+        }
+        uploads {
+            preview {
+                height = {$plugin.eric_yee_contentelements.uploads.preview.height}
+                width = {$plugin.eric_yee_contentelements.uploads.preview.width}
+            }
+        }
+    }
+
+}

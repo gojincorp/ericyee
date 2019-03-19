@@ -1,0 +1,182 @@
+body {
+	
+}
+
+.navbar {
+	z-index:1;
+}
+
+#me {
+}
+
+.navbar-brand {
+	padding: 11px;
+	height: 75px;
+}
+
+#topNavbar {
+	margin-bottom : 10px;
+}
+
+#topNavbar.ibDefaultCss .navbar-nav > li > a {
+	padding-top: 28px;
+	padding-bottom: 28px;
+}
+
+#topNavbar.ibMobileCss .navbar-nav > li > a {
+	padding-top: 18px;
+	padding-bottom: 18px;
+}
+
+#topNavbar.ibMobileCss .navbar-nav .open .dropdown-menu .dropdown-header, #topNavbar.ibMobileCss .navbar-nav .open .dropdown-menu > li > a {
+    padding: 5px 15px 5px 45px;
+}
+
+#topNavbar.ibMobileCss .navbar-nav .open .dropdown-menu > li > a {
+    line-height: 30px;
+}
+
+#topNavbar .navbar-toggle {
+	padding: 22px 24px;
+}
+
+.dropdownXXX:hover .dropdown-menuXXX {
+display: block;
+}
+
+/*
+ Let's affix the navbar to the top of the viewport.
+*/
+.affix {
+	top: 0px;
+	width: 100%;
+}
+
+.affix ~ #breadcrumbContainer {
+	padding-top: 86px;
+}
+
+.breadcrumb {
+	background-color: transparent;
+	margin-bottom: 10px;
+}
+
+#topNavbar.ibDefaultCss .dropdown .dropdown-menu {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+
+#topNavbar.ibDefaultCss .dropdown:hover .dropdown-menu {
+    max-height: 200px;
+    opacity: 1;
+}
+
+.panel-heading.btn {
+	text-align: left;
+    border: 0px solid transparent;
+    border-radius: 3;
+}
+	
+.panel-heading .panel-title span:after {
+    content: '\2212';
+    color: #777;
+    font-size: larger;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    margin-top: 12px;
+}
+
+.panel-heading.collapsed .panel-title span:after {
+    content: "\002B";
+}
+
+#ringBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: visible;
+  position: relative;
+  top: -100px;
+}
+#ringOfText {
+  margin: 0;
+  list-style: none;
+  font-size: 4vw;
+  color: red;
+  transform-style: preserve-3d;
+  animation: three-dimensions-circle 30s linear infinite;
+}
+#ringOfText li {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+#ringOfText li:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg) translateY(-480px) rotateX(90deg);
+}
+
+#ringOfText li:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(30deg) translateY(-480px) rotateX(90deg);
+}
+
+#ringOfText li:nth-child(3) {
+  transform: translate(-50%, -50%) rotate(60deg) translateY(-480px) rotateX(90deg);
+}
+
+#ringOfText li:nth-child(4) {
+  transform: translate(-50%, -50%) rotate(90deg) translateY(-480px) rotateX(90deg);
+}
+
+#ringOfText li:nth-child(5) {
+  transform: translate(-50%, -50%) rotate(120deg) translateY(-480px) rotateX(90deg);
+}
+
+#ringOfText li:nth-child(6) {
+  transform: translate(-50%, -50%) rotate(150deg) translateY(-480px) rotateX(90deg);
+}
+
+#ringOfText li:nth-child(7) {
+  transform: translate(-50%, -50%) rotate(180deg) translateY(-480px) rotateX(90deg);
+}
+
+#ringOfText li:nth-child(8) {
+  transform: translate(-50%, -50%) rotate(210deg) translateY(-480px) rotateX(90deg);
+}
+
+#ringOfText li:nth-child(9) {
+  transform: translate(-50%, -50%) rotate(240deg) translateY(-480px) rotateX(90deg);
+}
+
+#ringOfText li:nth-child(10) {
+  transform: translate(-50%, -50%) rotate(270deg) translateY(-480px) rotateX(90deg);
+}
+
+#ringOfText li:nth-child(11) {
+  transform: translate(-50%, -50%) rotate(300deg) translateY(-480px) rotateX(90deg);
+}
+
+#ringOfText li:nth-child(12) {
+  transform: translate(-50%, -50%) rotate(330deg) translateY(-480px) rotateX(90deg);
+}
+
+@keyframes three-dimensions-circle {
+  0% {
+    transform: rotateX(-100deg) rotate(0) scale(2);
+  }
+  50% {
+    transform: rotateX(90deg) rotate(-180) scale(.5);
+  }
+  100% {
+    transform: rotateX(-100deg) rotate(-360deg) scale(.1);
+  }
+}

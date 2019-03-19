@@ -1,0 +1,277 @@
+body {
+}
+
+.navbar {
+	z-index:1;
+}
+
+.label-ib {
+	margin-left: .2em;
+	margin-bottom:  2em;
+}
+
+.progress-label {
+	float: left;
+	min-width: 150px;
+	text-align: right;
+}
+
+.progress-bar {
+	padding: 0px 10px;
+}
+
+#me {
+}
+
+.navbar-brand {
+	padding: 11px;
+	height: 75px;
+}
+
+#topNavbar {
+	margin-bottom : 10px;
+}
+
+#topNavbar.ibDefaultCss .navbar-nav > li > a {
+	padding-top: 28px;
+	padding-bottom: 28px;
+}
+
+#topNavbar.ibMobileCss .navbar-nav > li > a {
+	padding-top: 18px;
+	padding-bottom: 18px;
+}
+
+#topNavbar.ibMobileCss .navbar-nav .open .dropdown-menu .dropdown-header, #topNavbar.ibMobileCss .navbar-nav .open .dropdown-menu > li > a {
+    padding: 5px 15px 5px 45px;
+}
+
+#topNavbar.ibMobileCss .navbar-nav .open .dropdown-menu > li > a {
+    line-height: 30px;
+}
+
+#topNavbar .navbar-toggle {
+	padding: 22px 24px;
+}
+
+.dropdownXXX:hover .dropdown-menuXXX {
+display: block;
+}
+
+/*
+ Let's affix the navbar to the top of the viewport.
+*/
+.affix {
+	top: 0px;
+	width: 100%;
+}
+
+.affix ~ #breadcrumbContainer {
+	padding-top: 86px;
+}
+
+.breadcrumb {
+	background-color: transparent;
+	margin-bottom: 10px;
+}
+
+/*
+#topNavbar.ibDefaultCss .dropdown .dropdown-menu {
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+
+    max-height: 0;
+    display: block;
+    overflow: hidden;
+    opacity: 0;
+}
+
+#topNavbar.ibDefaultCss .dropdown.open .dropdown-menu {
+    max-height: 200px;
+    opacity: 1;
+}
+*/
+
+.panel-heading.btn {
+	text-align: left;
+    border: 0px solid transparent;
+    border-radius: 3;
+}
+	
+.panel-heading .panel-title span:after {
+    content: '\2212';
+    color: #777;
+    font-size: larger;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+    margin-top: 12px;
+}
+
+.panel-heading.collapsed .panel-title span:after {
+    content: "\002B";
+}
+
+#ringBody {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: visible;
+  position: relative;
+  top: -100px;
+}
+#ringBody.ibMobileCss {
+  perspective: 1000px;
+}
+#ringBody.ibDefaultCss {
+  perspective: 1000px;
+}
+
+.ringWord {
+	opacity: 0;
+}
+.ringChar {
+	position: absolute;
+	width: 1em;
+	height: 1em;
+	left: 0em;
+	top: 1em;
+	transform-style: preserve-3d;
+	transition: transform 1s, opacity 1s;
+	text-align: center;
+}
+
+@iterations: 97;
+@degrees: 360/@iterations;
+@radius: 23.22227474473699;
+
+
+.opacityLoop (@i) when (@i >= 88) {
+	.ringChar:nth-child(@{i}) {
+	  transform: rotateY((((@degrees * ((@i - 1))) - 180) * 1deg)) translateZ((@radius * .4em));
+	  opacity: 0;
+	}
+}
+.opacityLoop (@i) when (@i >= 48) and (@i < 88) {
+	.ringChar:nth-child(@{i}) {
+	  transform: rotateY((((@degrees * ((@i - 1))) - 180) * 1deg)) translateZ((@radius * .4em));
+	  opacity: (((89 - @i))/48);
+	}
+}
+.opacityLoop (@i) when (@i < 48) and (@i >= 14) {
+	.ringChar:nth-child(@{i}) {
+	  transform: rotateY((((@degrees * ((@i - 1))) - 180) * 1deg)) translateZ((@radius * .4em));
+	  opacity: ((((@i - 8))/48));
+	}
+}
+.opacityLoop (@i) when (@i < 14) {
+	.ringChar:nth-child(@{i}) {
+	  transform: rotateY((((@degrees * ((@i - 1))) - 180) * 1deg)) translateZ((@radius * .4em));
+	  opacity: 0;
+	}
+}
+  
+.ringBodyLoop (@i) when (@i > 0) {
+.opacityLoop (@i);
+  
+  .ringBodyLoop((@i - 1));
+}
+
+.ringBodyLoop(@iterations);
+
+#ringOfCharacters {
+  margin: 0;
+  list-style: none;
+  font-size: 4vw;
+  color: red;
+  transform-style: preserve-3d;
+}
+
+#sandboxImage {
+	float: left;
+	margin: 0 2em 1.4em 0;
+	transform: matrix(.707, .707, -.707, .707, 0, 0);
+	transition: 2s steps(3, end);	
+}
+
+#sandboxImage:hover, #sandboxImage:focus {
+	transform: matrix(.707, -.707, .707, .707, 0, 0);
+	opacity: .5;
+}
+
+.websiteThumbnail {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+} 
+
+// CONTACT FORM
+// ============
+#contact_form_holder {
+	font-family: 'Verdana';
+	width:400px;
+	padding:0px;
+	margin:0px;
+}
+#cf_submit_p {
+	text-align:right;
+}
+.error {
+	display:none;
+	padding:5px;
+	color:#D8000C;
+	font-size:12px;
+	background-color:#FFBABA;
+	border:solid 1px #e06d6d;
+}
+.success {
+	display:none;
+	padding:5px;
+	color:#044406;
+	font-size:12px;
+	background-color:#B7FBB9;
+	border:solid 1px #65d668;
+}
+#contact_logo {
+	vertical-align:middle;
+}
+.error img {
+	vertical-align:top;
+}
+.contact_name,
+.contact_email,
+.contact_subject,
+.contact_message {
+	font-size:14px;
+	width:388px;
+	max-width:388px;
+	background:none;
+	border:solid 1px #505050;
+	padding:5px; margin:5px 0px;
+}
+#topic {
+	width:100%;
+	font-size:12px;
+	background:none;
+	border:solid 1px #505050;
+	padding:5px;
+	margin:5px 0px;
+}
+.contact_message {
+	height:200px;
+}
+select,
+input,
+textarea {
+	outline:none;
+	background:none;
+	border:solid 1px #505050;
+}
+select:focus,
+input:focus,
+textarea:focus {
+	border:solid 1px #0066FF;
+	-webkit-box-shadow:#0066FF 0px 0px 5px;
+}
