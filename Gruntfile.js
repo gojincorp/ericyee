@@ -36,9 +36,12 @@ module.exports = function(grunt) {
             core: {
                 options: {
                   map: true
-            },
+                },
                 src: 'Resources/Public/Css/<%= pkg.name %>.css'
             }
+        }
+        webpack: {
+        	
         }
     });
 

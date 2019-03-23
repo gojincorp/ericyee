@@ -5,4 +5,4 @@
 .settings/
 /.ptp-sync/
 .ptp-sync-folder
-/node_modules/
+node_modules

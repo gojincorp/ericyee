@@ -165,6 +165,9 @@ page {
     includeJSLibs {
 		jquery_3_3_1 = EXT:eric_yee/Resources/Public/Javascript/vendor/jquery-3.3.1.min.js
 		jquery_responsiveimages = EXT:eric_yee/Resources/Public/Javascript/vendor/jquery.responsiveimages.min.js
+		fontAwesome = https://use.fontawesome.com/releases/v5.8.1/js/all.js
+		fontAwesome.external = 1
+		fontAwesome.integrity = sha384-g5uSoOSBd7KkhAMlnQILrecXvzst9TdC09/VM+pjDTCM+1il8RHz5fKANTFFb+gQ
     }
 
     includeJS {

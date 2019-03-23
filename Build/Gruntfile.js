@@ -1,4 +1,7 @@
+const webpackConfig = require('./webpack.config.js');
+
 module.exports = function(grunt) {
+    require('jit-grunt')(grunt);
 
     /**
      * Project configuration.
@@ -90,7 +93,14 @@ module.exports = function(grunt) {
             javascript: {
                 files: '<%= paths.js %>Src/**/*.js',
                 tasks: ['js']
+            },
+            react: {
+                files: '<%= paths.js %>React/**/*.js',
+                tasks: ['webpack']
             }
+        },
+        webpack: {
+        	myConfig: webpackConfig
         }
     });
 
@@ -109,7 +119,7 @@ module.exports = function(grunt) {
      */
     grunt.registerTask('css', ['less', 'postcss', 'cssmin']);
     grunt.registerTask('js', ['uglify']);
-    grunt.registerTask('build', ['js', 'css', 'image']);
-    grunt.registerTask('default', ['build']);
+    grunt.registerTask('build', ['js', 'css', 'image', 'webpack']);
+    grunt.registerTask('default', ['build', 'watch']);
 
 };
