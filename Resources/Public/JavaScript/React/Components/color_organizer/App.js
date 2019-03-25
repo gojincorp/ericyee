@@ -12,6 +12,7 @@ class App extends Component {
         
         this.saveNewColor = this.saveNewColor.bind(this)
         this.saveRating = this.saveRating.bind(this)
+        this.removeColor = this.removeColor.bind(this)
     }
     
     saveNewColor(colorName, color) {
@@ -35,13 +36,18 @@ class App extends Component {
         this.setState({colors})
     }
     
+    removeColor(id) {
+        const colors = this.state.colors.filter(color => color.id !== id)
+        this.setState({colors})
+    }
+    
     render () {
-        const {saveNewColor, saveRating} = this
+        const {saveNewColor, saveRating, removeColor} = this
         const {colors} = this.state
         return (
             <div className='app'>
                 <AddColorForm saveNewColor={saveNewColor} />
-                <ColorList colors={colors} saveRating={saveRating} />
+                <ColorList colors={colors} saveRating={saveRating} removeColor={removeColor} />
             </div>
         )
     }
