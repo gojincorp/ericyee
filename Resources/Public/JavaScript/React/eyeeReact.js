@@ -11,6 +11,8 @@ import Timeline from './Components/d3_timeline/D3Timeline'
 import PeopleList from './Components/people_list_i/PeopleList'
 import RandomMeUsers from './Components/people_list_ii/PeopleList2'
 import { NewHiddenMessages, PopUpButton } from './Components/expandable/Expandable'
+import storeFactory from './Components/redux_color_organizer/store'
+import {addColor, removeColor, rateColor, sortColor} from './Components/redux_color_organizer/actions'
 
 $(function() {
     const logColor = (title, color) =>
@@ -71,4 +73,8 @@ $(function() {
             <><NewHiddenMessages /><PopUpButton hidden={true} txt="Toggle PopUp"><h1>Hidden Content</h1><p>This content starts off hidden</p></PopUpButton></>,
             document.getElementById('react-container-expandable')
         )
+    else if  (document.getElementById('react-container-redux')) {
+        const store = storeFactory()
+        store.dispatch(addColor("#FFFFFF", "Bright White"))
+    }
 })

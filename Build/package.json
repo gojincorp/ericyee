@@ -16,6 +16,7 @@
     "acorn": "^6.1.1",
     "ajv": "^6.10.0",
     "autoprefixer": "^9.5.0",
+    "babel-jest": "^24.5.0",
     "babel-loader": "^8.0.5",
     "btoa": "~1.1.2",
     "create-react-class": "^15.6.3",
