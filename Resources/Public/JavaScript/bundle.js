@@ -1282,14 +1282,6 @@ function (_Component3) {
   }
 
   _createClass(MenuButton, [{
-    key: "componentWillReceiveProps",
-    value: function componentWillReceiveProps(nextProps) {
-      var collapsed = nextProps.collapsed && nextProps.collapsed === true ? true : false;
-      this.setState({
-        collapsed: collapsed
-      });
-    }
-  }, {
     key: "render",
     value: function render() {
       var _this$props = this.props,
@@ -1936,7 +1928,7 @@ var constants = {
 /*!*****************************************************************************************!*\
   !*** ../Resources/Public/JavaScript/React/Components/redux_color_organizer/reducers.js ***!
   \*****************************************************************************************/
-/*! exports provided: color, colors, sort */
+/*! exports provided: color, colors, sort, colorTest */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1944,6 +1936,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "color", function() { return color; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "colors", function() { return colors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "sort", function() { return sort; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "colorTest", function() { return colorTest; });
 /* harmony import */ var _constants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./constants */ "../Resources/Public/JavaScript/React/Components/redux_color_organizer/constants.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
@@ -2010,6 +2003,26 @@ var sort = function sort() {
   switch (action.type) {
     case _constants__WEBPACK_IMPORTED_MODULE_0__["default"].SORT_COLORS:
       return action.sortBy;
+
+    default:
+      return state;
+  }
+};
+var colorTest = function colorTest(state, action) {
+  switch (action.type) {
+    case _constants__WEBPACK_IMPORTED_MODULE_0__["default"].ADD_COLOR:
+      return {
+        id: action.id,
+        title: action.title,
+        color: action.color,
+        timestamp: action.timestamp,
+        rating: 0
+      };
+
+    case _constants__WEBPACK_IMPORTED_MODULE_0__["default"].RATE_COLOR:
+      return _objectSpread({}, state, {
+        rating: action.rating
+      });
 
     default:
       return state;

@@ -1,6 +1,6 @@
 import {Component} from 'react'
 
-const Expandable = ComposedComponent =>
+export const Expandable = ComposedComponent =>
     class Expandable extends Component {
         constructor(props) {
             console.log("Expandable::constructor")
@@ -92,13 +92,6 @@ export class NewHiddenMessages extends Component {
 }
 
 class MenuButton extends Component {
-    componentWillReceiveProps(nextProps) {
-        const collapsed = (nextProps.collapsed && nextProps.collapsed === true)
-            ? true
-            : false
-        this.setState({collapsed})
-    }
-    
     render() {
         const {children, collapsed, txt, expandCollapse} = this.props
         return (
